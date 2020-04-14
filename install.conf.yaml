@@ -1,8 +1,16 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - clean: ['~']
 
 - link:
     ~/.profile: profile
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
+    ~/.gitconfig: gitconfig
+    ~/.vimrc: vimrc
 
-
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
