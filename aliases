@@ -1,3 +1,6 @@
 alias nuke='rm -rf'
 alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
+alias open=explorer.exe
+alias extils=explorer.exe
+alias exti=exit
