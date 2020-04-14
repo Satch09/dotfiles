@@ -5,12 +5,15 @@
 
 - clean: ['~']
 
+- create:
+	- ~/.config
+
 - link:
-    ~/.profile: profile
-    ~/.zshenv: zshenv
+    ~/.config/.profile: profile
+    ~/.config/.zshenv: zshenv
     ~/.zshrc: zshrc
-    ~/.gitconfig: gitconfig
-    ~/.vimrc: vimrc
+    ~/.config/.gitconfig: gitconfig
+    ~/.config/.vimrc: vimrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

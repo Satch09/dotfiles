@@ -1,2 +1,1 @@
-
-	export PATH="~/dotfiles:$PATH"
+export PATH="~/.config:$PATH"
