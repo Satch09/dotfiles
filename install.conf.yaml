@@ -2,11 +2,13 @@
     link:
       create: true
       relink: true
+      force: true
 
 - clean: ['~']
 
 - link:
     ~/.profile: profile
+    ~/.aliases: aliases
     ~/.zshenv: zshenv
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
