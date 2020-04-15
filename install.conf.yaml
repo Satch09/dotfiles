@@ -2,7 +2,6 @@
     link:
       create: true
       relink: true
-      force: true
 
 - clean: ['~']
 
@@ -13,6 +12,7 @@
     ~/.zshrc: zshrc
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
+    ~/.npmrc: npmrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
