@@ -65,14 +65,6 @@ map <silent> <leader><cr> :noh<cr>
 
 " Match closing things
 
-inoremap " ""<left>
-inoremap ` ``<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
