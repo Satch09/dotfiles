@@ -49,23 +49,48 @@ map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
 noremap <leader>t2 :tabnext<cr>
 noremap <leader>t1 :tabprevious<cr>
-"map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
+map <leader>te :tabedit <C-r>=expand("%:p:h")<cr>/
 
 
 nmap <space> <leader><leader><leader>j
 vmap <space> <leader><leader><leader>j
 nmap <leader>w :w!<cr>
+nmap <leader>q :q<cr>
 
 map <silent> <leader><cr> :noh<cr>
+
+" Match closing things
+
+inoremap " ""<left>
+inoremap ` ``<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" Plugins
 call plug#begin('~/.vim/plugged')
+
+" "Plug 'neoclide/coc.nvim', {'branch':'release','tag': '*', 'do': { -> coc#util#install()}}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 call plug#end()
 
+" Airline Plugin"
+let g:airline#extensions#tabline#enabled = 1
 
 " ALL THIS IS FOR COC
 " TextEdit might fail if hidden is not set.
+
 set hidden
 
 " Some servers have issues with backup files, see #649.

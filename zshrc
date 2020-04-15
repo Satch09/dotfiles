@@ -106,13 +106,10 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 # Will check any folder for .nvmrc and use that version for node
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
+load-nvmrc() { local node_version="$(nvm version)"
     local nvmrc_path="$(nvm_find_nvmrc)"
-
       if [ -n "$nvmrc_path" ]; then
 	          local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
 		      if [ "$nvmrc_node_version" = "N/A" ]; then
 			            nvm install
 				        elif [ "$nvmrc_node_version" != "$node_version" ]; then
@@ -124,4 +121,4 @@ load-nvmrc() {
 									      fi
 								      }
 							      add-zsh-hook chpwd load-nvmrc
-							      load-nvmrci
+							      load-nvmrc
