@@ -6,6 +6,7 @@ alias exti=exit
 alias nr='npm run'
 alias nig='npm i -g'
 alias zconf='vim ~/.zshrc'
+alias zalias='vim ~/.aliases'
 alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
 alias af='alias-finder'
 alias code='code-insiders || code'
