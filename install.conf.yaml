@@ -11,13 +11,12 @@
   - ~/.ssh
 
 - link:
-    ~/.profile: profile
-    ~/.aliases: aliases
+    ~/.aliases: zsh/aliases
     ~/.zshenv: zsh/zshenv
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
-    ~/.gitconfig: gitconfig
-    ~/.vimrc: vimrc
+    ~/.gitconfig: git/gitconfig
+    ~/.vimrc: vim/vimrc
     ~/.npmrc: npmrc
     ~/scripts.d: scripts
     ~/.ssh/config: ssh/config
