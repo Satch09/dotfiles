@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/home/satch/scripts.d
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/satch/.oh-my-zsh"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/home/satch/scripts.d
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -102,7 +102,6 @@ source $HOME/.aliases
 
 # NVM Setup
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Will check any folder for .nvmrc and use that version for node
