@@ -5,17 +5,7 @@ export ZSH="/home/satch/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/satch/scripts.d
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="agnoster"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -69,56 +59,20 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git man zsh-autosuggestions web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
+export EDITOR='vim'
+   
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 source $HOME/.aliases
 
 # NVM Setup
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-# Will check any folder for .nvmrc and use that version for node
-# autoload -U add-zsh-hook
-# load-nvmrc() { local node_version="$(nvm version)"
-#     local nvmrc_path="$(nvm_find_nvmrc)"
-#       if [ -n "$nvmrc_path" ]; then
-# 	          local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-# 		      if [ "$nvmrc_node_version" = "N/A" ]; then
-# 			            nvm install
-# 				        elif [ "$nvmrc_node_version" != "$node_version" ]; then
-# 						      nvm use
-# 						          fi
-# 							    elif [ "$node_version" != "$(nvm version default)" ]; then
-# 								        echo "Reverting to nvm default version"
-# 									    nvm use default
-# 									      fi
-# 								      }
-# 							      add-zsh-hook chpwd load-nvmrc
-# 							      load-nvmrc
