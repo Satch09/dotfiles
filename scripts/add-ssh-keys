@@ -1,9 +1,0 @@
-#!/bin/bash
-
-echo Adding SSH keys
-
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/pi
-ssh-add ~/.ssh/github
-
-echo SSH keys added

@@ -1,0 +1,43 @@
+#!/bin/bash
+
+generate(){
+
+        echo Generating SSH keys
+
+        ssh-keygen -t rsa -b 4096 -N '' -C "christophermaisch@gmail.com" -f ~/.ssh/pi
+        ssh-keygen -t rsa -b 4096 -N '' -C "christophermaisch@gmail.com" -f ~/.ssh/github
+
+        echo SSH keys generated
+}
+
+add(){
+        echo Adding SSH keys
+
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/pi
+        ssh-add ~/.ssh/github
+
+        echo SSH keys added
+}
+
+
+set(){
+        echo Setting SSH key permission
+
+        chmod 700 ~/.ssh
+        # chmod 644 ~/.ssh/authorized_keys
+        chmod 644 ~/.ssh/known_hosts
+        chmod 644 ~/.ssh/config
+        chmod 600 ~/.ssh/pi
+        chmod 644 ~/.ssh/pi.pub
+        chmod 600 ~/.ssh/github
+        chmod 644 ~/.ssh/github.pub
+
+        echo SSH key permissions set
+}
+
+for func in "$@"
+do
+        "$func"
+done
+
