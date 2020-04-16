@@ -1,2 +1,2 @@
 
-	export PATH="~/dotfiles:$PATH"
+	# export PATH="~/dotfiles:$PATH"
