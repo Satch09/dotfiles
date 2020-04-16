@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+echo Deleting all node_modules within this folder...
+
+find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' \;
+
+echo Done!
+
