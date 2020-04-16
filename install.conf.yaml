@@ -6,6 +6,9 @@
 
 - clean: ['~']
 
+- create:
+  - ~/scripts.d
+
 - link:
     ~/.profile: profile
     ~/.aliases: aliases
@@ -14,6 +17,7 @@
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.npmrc: npmrc
+    ~/scripts.d: scripts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

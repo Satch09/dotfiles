@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo Setting SSH key permission
+
+chmod 700 ~/.ssh
+# chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/pi
+chmod 644 ~/.ssh/pi.pub
+chmod 600 ~/.ssh/github
+chmod 644 ~/.ssh/github.pub
+
+echo SSH key permissions set

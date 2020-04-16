@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo Generating SSH keys
+
+ssh-keygen -t rsa -b 4096 -N '' -C "christophermaisch@gmail.com" -f ~/.ssh/pi
+ssh-keygen -t rsa -b 4096 -N '' -C "christophermaisch@gmail.com" -f ~/.ssh/github
+
+echo SSH keys generated
