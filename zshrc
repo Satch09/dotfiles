@@ -6,6 +6,17 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/satch/scripts.d
 
 ZSH_THEME="agnoster"
+plugins=(alias-finder git man zsh-autosuggestions web-search)
+
+source $ZSH/oh-my-zsh.sh
+
+export EDITOR='vim'
+
+source $HOME/.aliases
+
+# NVM Setup
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,11 +70,6 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git man zsh-autosuggestions web-search)
-
-source $ZSH/oh-my-zsh.sh
-
-export EDITOR='vim'
    
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -71,8 +77,3 @@ export EDITOR='vim'
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-source $HOME/.aliases
-
-# NVM Setup
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
