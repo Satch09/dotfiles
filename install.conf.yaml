@@ -8,6 +8,7 @@
 
 - create:
   - ~/scripts.d
+  - ~/.ssh
 
 - link:
     ~/.profile: profile
@@ -18,6 +19,7 @@
     ~/.vimrc: vimrc
     ~/.npmrc: npmrc
     ~/scripts.d: scripts
+    ~/.ssh/config: ssh/config
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
