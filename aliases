@@ -3,6 +3,7 @@ alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
 alias open=explorer.exe
 alias exti=exit
+alias eixt=exit
 alias nr='npm run'
 alias nig='npm i -g'
 alias zconf='vim ~/.zshrc'

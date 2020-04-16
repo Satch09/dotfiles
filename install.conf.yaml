@@ -13,8 +13,9 @@
 - link:
     ~/.profile: profile
     ~/.aliases: aliases
-    ~/.zshenv: zshenv
-    ~/.zshrc: zshrc
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+    ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
     ~/.gitconfig: gitconfig
     ~/.vimrc: vimrc
     ~/.npmrc: npmrc

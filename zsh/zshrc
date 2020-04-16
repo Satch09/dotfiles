@@ -5,7 +5,7 @@ export ZSH="/home/satch/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/satch/scripts.d
 
-ZSH_THEME="agnoster"
+ZSH_THEME="my_agnoster"
 plugins=(alias-finder git man zsh-autosuggestions web-search)
 
 source $ZSH/oh-my-zsh.sh
