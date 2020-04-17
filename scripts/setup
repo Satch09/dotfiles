@@ -35,6 +35,12 @@ zsh() {
 vim() {
 
         echo Installing Vim 8.2...
+
+        if [ -f /usr/bin/vim ]; then
+                echo Vim already installed
+        else
+               sudo apt-get install vim
+        fi
 #        command -v vim >/dev/null 2>&1 || {
  #               sudo apt-get install vim
   #      }
