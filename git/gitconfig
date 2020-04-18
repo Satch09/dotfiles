@@ -46,3 +46,7 @@
 
 [include]
 	path = ~/.gitconfig_local
+
+# Force SSH connection 
+[url "git@github.com:"]
+	insteadOf = https://github.com/
