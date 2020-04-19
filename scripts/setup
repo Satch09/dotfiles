@@ -76,6 +76,8 @@ echo Installing NVM...
 source ~/.zshrc
 
 echo nvm installed, I assume that you still have the configs in your zshrc...
+
+nvm install --lts
 }
 
 
