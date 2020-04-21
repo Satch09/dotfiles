@@ -1,6 +1,5 @@
 if exists('g:vscode')
             " VSCode extension
-:inoremap ii <Esc>l				
 xmap gc  <Plug>VSCodeCommentary
 nmap gc  <Plug>VSCodeCommentary
 omap gc  <Plug>VSCodeCommentary
