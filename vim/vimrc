@@ -1,3 +1,11 @@
+if exists('g:vscode')
+            " VSCode extension
+:inoremap ii <Esc>l				
+xmap gc  <Plug>VSCodeCommentary
+nmap gc  <Plug>VSCodeCommentary
+omap gc  <Plug>VSCodeCommentary
+nmap gcc <Plug>VSCodeCommentaryLine
+else
 "---------------------
 " Basic editing config
 "---------------------
@@ -60,7 +68,7 @@ nmap <space> <leader><leader><leader>j
 vmap <space> <leader><leader><leader>j
 nmap <leader>w :w!<cr>
 nmap <leader><leader>w :wq<cr>
-nmap <leader>q :q!<cr>
+nmap <leader><leader>q :q!<cr>
 
 map <silent> <leader><cr> :noh<cr>
 
@@ -91,3 +99,4 @@ call plug#end()
 " Airline Plugin"
 let g:airline#extensions#tabline#enabled = 1
 
+endif

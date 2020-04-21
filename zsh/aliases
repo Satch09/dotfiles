@@ -18,3 +18,4 @@ alias af='alias-finder'
 alias afg='alias-finder git'
 alias code='code-insiders || code'
 alias fb=firebase
+alias gcm="git commit -m'"
