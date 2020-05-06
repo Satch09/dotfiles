@@ -4,13 +4,14 @@
 export ZSH="/home/satch/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/satch/scripts.d
+export PATH=~/.composer/vendor/bin:$PATH
 
 ZSH_THEME="my_agnoster"
 plugins=(alias-finder git man zsh-autosuggestions web-search)
 
 source $ZSH/oh-my-zsh.sh
 
-export EDITOR='vim'
+# export EDITOR='vim'
 
 source $HOME/.aliases
 

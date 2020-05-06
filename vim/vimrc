@@ -26,6 +26,7 @@ set nocompatible
 " set clipboard=unnamed
 " show a navigable menu for tab completion
 set wildmenu	
+set noswapfile
 
 set expandtab
 set hlsearch
