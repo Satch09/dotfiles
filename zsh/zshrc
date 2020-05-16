@@ -1,7 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=$PATH:/home/satch/scripts.d
 export PATH=~/.composer/vendor/bin:$PATH
