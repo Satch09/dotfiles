@@ -23,4 +23,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [cp vim/vimrc /mnt/c/Users/chris/.vimrc]
+  # - [cp vim/vimrc /mnt/c/Users/chris/.vimrc]

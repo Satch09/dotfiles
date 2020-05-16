@@ -17,7 +17,17 @@ alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
 alias af='alias-finder'
 alias afg='alias-finder git'
 alias code='code-insiders'
-alias fb='firebase'
 alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
+
+# React
+alias cra='create-react-app'
+
+# Common openings
+alias c.='code .'
+alias o.='open .'
+
+# Firebase
+alias fb='firebase'
+alias fb-df='firebase deploy --only functions'
