@@ -21,6 +21,12 @@ alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
 
+# Defaults
+alias mv='mv -i'
+
+# Folders
+alias coding='~/coding'
+
 # React
 alias cra='create-react-app'
 
