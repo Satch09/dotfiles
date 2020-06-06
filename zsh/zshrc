@@ -7,6 +7,7 @@ export PATH=$PATH:/home/satch/scripts.d
 export PATH=~/.composer/vendor/bin:$PATH
 export PATH=$PATH:/usr/bin/php
 
+ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="my_agnoster"
 plugins=(alias-finder git man zsh-autosuggestions web-search)
 
