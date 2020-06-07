@@ -1,7 +1,6 @@
 alias nuke='rm -rf'
 alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
-alias open=explorer.exe
 alias exti=exit
 alias eixt=exit
 alias nr='npm run'
@@ -16,10 +15,13 @@ alias zaliases='vim ~/.aliases'
 alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
 alias af='alias-finder'
 alias afg='alias-finder git'
-alias code='code-insiders'
 alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
+
+# Tmux
+alias tm=tmux
+
 
 # Defaults
 alias mv='mv -i'
@@ -31,8 +33,6 @@ alias coding='~/coding'
 alias cra='create-react-app'
 
 # Common openings
-alias c.='code .'
-alias o.='open .'
 
 # Firebase
 alias fb='firebase'
