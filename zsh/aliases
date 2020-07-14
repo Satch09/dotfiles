@@ -32,9 +32,19 @@ alias coding='~/coding'
 
 # React
 alias cra='create-react-app'
+alias gat='gatsby'
+
 
 # Common openings
+alias c='code-insiders'
 
 # Firebase
 alias fb='firebase'
 alias fb-df='firebase deploy --only functions'
+
+# Python
+alias python='python3'
+alias pip='pip3'
+
+# Docker
+alias dk='docker'
