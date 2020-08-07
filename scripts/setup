@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 zsh() {
         echo Installing zsh...
@@ -79,6 +79,20 @@ echo nvm installed, I assume that you still have the configs in your zshrc...
 
 nvm install --lts
 }
+
+# dev() {
+# while getopts ":hs:p:" arg; do
+# case $arg in
+#         p)
+#                 echo "p is ${OPTARG}"
+#                 ;;
+# esac
+# done
+# source ./setup
+# exit 0
+# }
+
+
 
 
 for func in "$@"
