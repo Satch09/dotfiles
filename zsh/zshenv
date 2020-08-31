@@ -1,2 +1,3 @@
+#!/bin/zsh
 
-	# export PATH="~/dotfiles:$PATH"
+export XDG_CONFIG_HOME="$HOME/.config"

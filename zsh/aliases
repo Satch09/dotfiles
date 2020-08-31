@@ -19,6 +19,7 @@ alias afg='alias-finder git'
 alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
+alias s='source'
 
 # Tmux
 alias tm=tmux
