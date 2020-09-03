@@ -20,6 +20,7 @@ alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
 alias s='source'
+alias d='dirs -v'
 
 # Tmux
 alias tm=tmux
