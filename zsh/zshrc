@@ -5,11 +5,12 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 
 # for index ({1..9}) alias "$index"="cd +${index}"; unset index # Can cd to directory stacks with numbers
 
+
 autoload -Uz compinit; compinit
 # Path to your oh-my-zsh installation.
 #
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/scripts.d:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/scripts.d:$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:$PATH
 # echo $XDG_CONFIG_HOME
 ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="my_agnoster"
@@ -17,7 +18,7 @@ plugins=(alias-finder git man zsh-autosuggestions nvm osx sudo fzf)
 
 source $ZSH/oh-my-zsh.sh
 
-# export EDITOR='vim'
+# export EDITOR='nvim'
 
 source $HOME/.aliases
 

@@ -9,18 +9,18 @@ alias nu='npm uninstall'
 alias nrst='npm run start'
 alias nrsv='npm run serve'
 alias nig='npm i -g'
-alias zconf='vim ~/.zshrc'
-alias vconf='vim ~/.vimrc'
-alias zaliases='vim ~/.aliases'
-alias tconf='vim ~/.tmux.conf'
+alias zconf='nvim ~/.zshrc'
+alias vconf='nvim ~/.vimrc'
+alias zaliases='nvim ~/.aliases'
+alias tconf='nvim ~/.tmux.conf'
 alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
 alias af='alias-finder'
 alias afg='alias-finder git'
 alias gcm="git commit -m'"
 alias phpa='php artisan'
 alias nm='nodemon'
-alias s='source'
 alias d='dirs -v'
+alias v=nvim
 
 # Tmux
 alias tm=tmux
@@ -30,7 +30,6 @@ alias tm=tmux
 alias mv='mv -i'
 
 # Folders
-alias coding='~/coding'
 
 # React
 alias cra='create-react-app'
