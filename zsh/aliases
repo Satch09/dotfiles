@@ -17,10 +17,11 @@ alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
 alias af='alias-finder'
 alias afg='alias-finder git'
 alias gcm="git commit -m'"
-alias phpa='php artisan'
-alias nm='nodemon'
 alias d='dirs -v'
-alias v=nvim
+alias vim=nvim
+alias dk=docker
+alias dc=docker-compose
+
 
 # Tmux
 alias tm=tmux
@@ -33,11 +34,15 @@ alias mv='mv -i'
 
 # React
 alias cra='create-react-app'
-alias gat='gatsby'
+alias gb='gatsby'
+
+# General Development
 
 
 # Common openings
-alias c='code-insiders'
+# Using vsc - vscode plugin for vscode
+# alias c='code-insiders'
+
 
 # Firebase
 alias fb='firebase'

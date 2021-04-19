@@ -9,18 +9,22 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 autoload -Uz compinit; compinit
 # Path to your oh-my-zsh installation.
 #
+export FZF_BASE=/usr/local/bin/fzf
 export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/scripts.d:$HOME/bin:/usr/local/bin:$PATH:$HOME/.local/bin:$PATH
+export PATH=$HOME/scripts.d:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.doom.d:$PATH
 # echo $XDG_CONFIG_HOME
 ZSH_DISABLE_COMPFIX=true
 ZSH_THEME="my_agnoster"
-plugins=(alias-finder git man zsh-autosuggestions nvm osx sudo fzf)
+# NVM_LAZY=1
+VSCODE=code-insiders
+plugins=(z wd vscode fzf cp copyfile copydir zsh-vi-mode web-search alias-finder git man zsh-autosuggestions osx sudo docker docker-compose nvm)
 
 source $ZSH/oh-my-zsh.sh
 
 # export EDITOR='nvim'
 
 source $HOME/.aliases
+# ZVM_VI_ESCAPE_BINDKEY=jj
 
 # # NVM Setup
 # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
