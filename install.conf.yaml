@@ -9,7 +9,7 @@
 - create:
   - ~/scripts.d
   - ~/.ssh
-  - ~/.config/nvim
+  - ~/.config
 
 - link:
     ~/.aliases: zsh/aliases
@@ -19,7 +19,7 @@
     ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
-    ~/.config/nvim/init.vim: nvim/init.vim
+    ~/.config/nvim: config/nvim/
     ~/.npmrc: npmrc
     ~/scripts.d: scripts
     ~/.ssh/config: ssh/config
