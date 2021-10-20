@@ -1,6 +1,6 @@
 # General
 alias o=open
-alias nuke='rm -rf'
+# alias nuke='rm -rf'
 alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
 alias update='sudo apt update'
@@ -23,6 +23,8 @@ alias afg='alias-finder git'
 alias gcm="git commit -m'"
 alias d='dirs -v'
 alias vim=nvim
+alias install='brew install'
+alias uninstall='brew uninstall'
 
 
 # Tmux
@@ -53,7 +55,8 @@ alias fb='firebase'
 alias fb-df='firebase deploy --only functions'
 
 # Python
-alias py='python3'
+alias python='python3'
+alias py='python'
 alias pip='pip3'
 
 # Docker

@@ -2,9 +2,9 @@
     link:
       create: true
       relink: true
-      force: true
+        #force: true
 
-- clean: ['~']
+        #- clean: ['~']
 
 - create:
   - ~/scripts.d
@@ -17,6 +17,7 @@
     ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
+    ~/.config/nvim/init.vim: nvim/init.vim
     ~/.npmrc: npmrc
     ~/scripts.d: scripts
     ~/.ssh/config: ssh/config
@@ -24,3 +25,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [mkdir -p $HOME/.config/]
+  - [mkdir -p $HOME/.config/nvim]

@@ -3,3 +3,4 @@ echo Creating $1 for you!
 mkdir -p "$(dirname "$1")" && touch "$1";
 echo Done!
 exit 0
+test /test/file

@@ -3,6 +3,11 @@ setopt AUTO_PUSHD               # Push thee current directorey visited on the st
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
 setopt PUSHD_SILENT             # Do not print the directory stack after pushd or popd
 
+letsgo() {
+  echo "sourced..."
+}
+letsgo
+
 for index ({1..9}) alias "$index"="cd +${index}"; unset index 
 # Can cd to directory stacks with numbers
 
@@ -57,7 +62,7 @@ ZVM_VI_ESCAPE_BINDKEY=ii
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
