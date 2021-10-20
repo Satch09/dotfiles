@@ -1,6 +1,10 @@
+# General
+alias o=open
 alias nuke='rm -rf'
 alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 alias exti=exit
 alias eixt=exit
 alias nr='npm run'
@@ -19,8 +23,6 @@ alias afg='alias-finder git'
 alias gcm="git commit -m'"
 alias d='dirs -v'
 alias vim=nvim
-alias dk=docker
-alias dc=docker-compose
 
 
 # Tmux
@@ -29,6 +31,8 @@ alias tm=tmux
 
 # Defaults
 alias mv='mv -i'
+# alias ls='lsd'
+alias lst='ls -t'
 
 # Folders
 
@@ -41,7 +45,7 @@ alias gb='gatsby'
 
 # Common openings
 # Using vsc - vscode plugin for vscode
-# alias c='code-insiders'
+alias c='code-insiders'
 
 
 # Firebase
@@ -49,8 +53,9 @@ alias fb='firebase'
 alias fb-df='firebase deploy --only functions'
 
 # Python
-alias python='python3'
+alias py='python3'
 alias pip='pip3'
 
 # Docker
 alias dk='docker'
+alias dc='docker-compose'

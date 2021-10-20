@@ -14,10 +14,21 @@ Host remote-pi
     User satch
     HostName 102.65.55.129
     IdentityFile ~/.ssh/pi
-    Port 4810 
+    Port 4810
     PermitLocalCommand yes
     # Unfortunately ssh does not support line breaks in config files
          LocalCommand ssh -o PermitLocalCommand=no %n "which git >/dev/null && ([[ -d ~/dotfiles ]] && (echo "Updating your dotfiles on %h ..." && cd ~/dotfiles && git pull -q && ./install >/dev/null) || (echo "Installing dotfiles on %h ..." && git clone -q https://github.com/Satch09/dotfiles && ./dotfiles/install >/dev/null))"
+
+
+Host eden_pi
+    User chris
+# HostName 192.250.159.183
+    HostName 192.168.0.163
+    IdentityFile ~/.ssh/eden_pi
+    Port 22
+#PermitLocalCommand yes
+    # Unfortunately ssh does not support line breaks in config files
+#         LocalCommand ssh -o PermitLocalCommand=no %n "which git >/dev/null && ([[ -d ~/dotfiles ]] && (echo "Updating your dotfiles on %h ..." && cd ~/dotfiles && git pull -q && ./install >/dev/null) || (echo "Installing dotfiles on %h ..." && git clone -q https://github.com/Satch09/dotfiles && ./dotfiles/install >/dev/null))"
 
 Host github.com
     User git
@@ -26,3 +37,7 @@ Host github.com
 Host gist.github.com
     User git
     IdentityFile ~/.ssh/github
+
+Host github.com-KinneticIT-compliance_alpha
+    User git
+    IdentityFile ~/.ssh/compliance_alpha
