@@ -9,10 +9,12 @@
 - create:
   - ~/scripts.d
   - ~/.ssh
+  - ~/.config/nvim
 
 - link:
     ~/.aliases: zsh/aliases
     ~/.zshenv: zsh/zshenv
+    ~/.zprofile: zsh/zprofile
     ~/.zshrc: zsh/zshrc
     ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
     ~/.gitconfig: git/gitconfig
@@ -25,5 +27,3 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [mkdir -p $HOME/.config/]
-  - [mkdir -p $HOME/.config/nvim]
