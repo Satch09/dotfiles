@@ -3,38 +3,17 @@ setopt AUTO_PUSHD               # Push thee current directorey visited on the st
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
 setopt PUSHD_SILENT             # Do not print the directory stack after pushd or popd
 
-letsgo() {
-  echo "sourced..."
-}
-letsgo
 
-for index ({1..9}) alias "$index"="cd +${index}"; unset index 
-# Can cd to directory stacks with numbers
-
-
-autoload -Uz compinit; compinit
-# Path to your oh-my-zsh installation.
-#
-export FZF_BASE=/usr/local/bin/fzf
-export ZSH="$HOME/.oh-my-zsh"
-export PATH=$HOME/scripts.d:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.doom.d:$PATH
-# echo $XDG_CONFIG_HOME
 ZSH_DISABLE_COMPFIX=false
 ZSH_THEME="my_agnoster"
 # NVM_LAZY=1
 VSCODE=code-insiders
+
 plugins=(z wd vscode fzf cp copyfile copydir zsh-vi-mode web-search alias-finder git man zsh-autosuggestions osx docker docker-compose nvm)
 
-source $ZSH/oh-my-zsh.sh
-
-# export EDITOR='nvim'
-
-source $HOME/.aliases
-
-ZVM_VI_ESCAPE_BINDKEY=ii
-# # NVM Setup
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# for index ({1..9}) alias "$index"="cd +${index}"; unset index 
+# Can cd to directory stacks with numbers
+autoload -Uz compinit; compinit
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -101,6 +80,9 @@ COMPLETION_WAITING_DOTS="true"
 # The next line enables shell command completion for gcloud.
 #if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
+source $ZSH/oh-my-zsh.sh
+source $ZDOTDIR/.aliases
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 eval "$(pyenv init -)"
+echo "Session"

@@ -13,11 +13,11 @@ alias nu='npm uninstall'
 alias nrst='npm run start'
 alias nrsv='npm run serve'
 alias nig='npm i -g'
-alias zconf='nvim ~/.zshrc'
+alias zconf='nvim $ZDOTDIR/.zshrc'
 alias vconf='nvim ~/.vimrc'
-alias zaliases='nvim ~/.aliases'
+alias zaliases='nvim $ZDOTDIR/.aliases'
 alias tconf='nvim ~/.tmux.conf'
-alias zsrc='source ~/.zshrc && echo Updated Zsh config!'
+alias zsrc='source $ZDOTDIR/.zshrc'
 alias af='alias-finder'
 alias afg='alias-finder git'
 alias gcm="git commit -m'"
@@ -26,7 +26,16 @@ alias vim=nvim
 alias install='brew install'
 alias uninstall='brew uninstall'
 
-
+# Info
+alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias biggest='du -s ./* | sort -nr | awk '\''{print $2}'\'' | xargs du -sh'
+alias dux='du -x --max-depth=1 | sort -n'
+alias path='echo -e ${PATH//:/\\n}'
+alias linecount="grep -c '^'"
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
 # Tmux
 alias tm=tmux
 
