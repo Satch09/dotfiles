@@ -18,6 +18,7 @@ alias vconf='nvim ~/.vimrc'
 alias zaliases='nvim $ZDOTDIR/.aliases'
 alias tconf='nvim ~/.tmux.conf'
 alias zsrc='source $ZDOTDIR/.zshrc'
+alias zenv='source $ZDOTDIR/.zshenv'
 alias af='alias-finder'
 alias afg='alias-finder git'
 alias gcm="git commit -m'"

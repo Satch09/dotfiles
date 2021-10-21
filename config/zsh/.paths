@@ -1,0 +1,3 @@
+export PATH="$HOME/scripts.d:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$HOME/.emacs.doom.d:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
