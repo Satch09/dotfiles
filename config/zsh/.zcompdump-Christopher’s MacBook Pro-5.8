@@ -723,6 +723,7 @@ _comps=(
 'hostname' '_hostname'
 'hotjava' '_webbrowser'
 'htop' '_htop'
+'hub' '_hub'
 'hwinfo' '_hwinfo'
 'iceweasel' '_mozilla'
 'icombine' '_ispell'
@@ -769,7 +770,6 @@ _comps=(
 'isag' '_sysstat'
 'ispell' '_ispell'
 'iwconfig' '_iwconfig'
-'j' '_j'
 'jadetex' '_tex'
 'jail' '_jail'
 'jar' '_java'
@@ -1796,7 +1796,7 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _nvm _docker-compose _docker _security _wd.sh \
-            _brew _brew_services _gh _git _j \
+            _brew _brew_services _gh _git _hub \
             _SUSEconfig _a2ps _a2utils _aap _abcde \
             _absolute_command_paths _ack _acpi _acpitool _acroread \
             _adb _add-zle-hook-widget _add-zsh-hook _alias _aliases \
@@ -1988,5 +1988,5 @@ autoload -Uz +X _call_program
 typeset -gUa _comp_assocs
 _comp_assocs=( '' )
 
-#omz revision: 6ac1ff69053525d94b8bc6c5243d2bb67fb61930
+#omz revision: f1dd97bb2a9df55fae9b1ca26c829b9f8b290667
 #omz fpath: /Users/satch/.oh-my-zsh/plugins/nvm /Users/satch/.oh-my-zsh/plugins/docker-compose /Users/satch/.oh-my-zsh/plugins/docker /Users/satch/.oh-my-zsh/plugins/osx /Users/satch/.oh-my-zsh/custom/plugins/zsh-autosuggestions /Users/satch/.oh-my-zsh/plugins/man /Users/satch/.oh-my-zsh/plugins/git /Users/satch/.oh-my-zsh/plugins/alias-finder /Users/satch/.oh-my-zsh/plugins/web-search /Users/satch/.oh-my-zsh/custom/plugins/zsh-vi-mode /Users/satch/.oh-my-zsh/plugins/copydir /Users/satch/.oh-my-zsh/plugins/copyfile /Users/satch/.oh-my-zsh/plugins/cp /Users/satch/.oh-my-zsh/plugins/fzf /Users/satch/.oh-my-zsh/plugins/vscode /Users/satch/.oh-my-zsh/plugins/wd /Users/satch/.oh-my-zsh/plugins/z /Users/satch/.oh-my-zsh/functions /Users/satch/.oh-my-zsh/completions /Users/satch/.oh-my-zsh/cache/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions
