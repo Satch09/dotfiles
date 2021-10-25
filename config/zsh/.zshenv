@@ -16,5 +16,4 @@ fi
 
 export SHELL_SESSIONS_DISABLE=1
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-source "$HOME/.cargo/env"
 echo "Environment"

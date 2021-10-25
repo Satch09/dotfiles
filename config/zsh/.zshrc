@@ -3,11 +3,8 @@ setopt AUTO_PUSHD               # Push thee current directorey visited on the st
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
 setopt PUSHD_SILENT             # Do not print the directory stack after pushd or popd
 
-
 ZSH_DISABLE_COMPFIX=false
 ZSH_THEME="my_agnoster"
-# NVM_LAZY=1
-VSCODE=code-insiders
 
 plugins=(z wd cp copyfile copydir zsh-vi-mode web-search alias-finder git man zsh-autosuggestions nvm)
 
@@ -73,19 +70,7 @@ COMPLETION_WAITING_DOTS="true"
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 
-# The next line updates PATH for the Google Cloud SDK.
-#if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-
-# The next line enables shell command completion for gcloud.
-#if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
-
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/.aliases
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-# Brew install autojump
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-eval "$(pyenv init -)"
 echo "Session"
