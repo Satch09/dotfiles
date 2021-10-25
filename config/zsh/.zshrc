@@ -9,7 +9,7 @@ ZSH_THEME="my_agnoster"
 # NVM_LAZY=1
 VSCODE=code-insiders
 
-plugins=(z wd vscode fzf cp copyfile copydir zsh-vi-mode web-search alias-finder git man zsh-autosuggestions osx docker docker-compose nvm)
+plugins=(z wd cp copyfile copydir zsh-vi-mode web-search alias-finder git man zsh-autosuggestions nvm)
 
 # for index ({1..9}) alias "$index"="cd +${index}"; unset index 
 # Can cd to directory stacks with numbers
