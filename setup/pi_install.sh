@@ -21,8 +21,10 @@ sudo apt -y install zsh git neovim gh
 cd ~/dotfiles
 chmod 755 ./install
 ./install
+source $HOME/.zshrc
 cd ~/.ssh
 ssh-keygen -f ~/.ssh/github -t ed25519 -C "christophermaisch@gmail.com"
 
-# Login to gh
+# Login to gh - You can add your new key during setup
 gh auth login
+
