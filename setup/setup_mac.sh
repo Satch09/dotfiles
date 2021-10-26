@@ -34,5 +34,9 @@ nvm alias default --lts
 
 brew cleanup && brew cask cleanup
 
+source $HOME/.zshenv
+source $HOME/.zprofile
+source $HOME/.zshrc
+
 echo "Done!"
 exit 0
