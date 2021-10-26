@@ -15,9 +15,6 @@ sudo apt -y update
 sudo apt -y install zsh git neovim gh tmux
 # Run ZSH Automatically
  chsh -s /usr/bin/zsh
-# Install tmuxinator
-wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
-  $ZSH/custom/plugins/zsh-vi-mode
 
 
 [ -d ~/.oh-my-zsh ] || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
@@ -26,11 +23,17 @@ cd ~/dotfiles
 chmod 755 ./install
 ./install
 
+# Install tmuxinator
+wget https://raw.githubusercontent.com/tmuxinator/tmuxinator/master/completion/tmuxinator.zsh -O /usr/local/share/zsh/site-functions/_tmuxinator
+
 # Install custom plugins
 git clone https://github.com/jeffreytse/zsh-vi-mode \
-source $HOME/.zshrc
+  $ZSH/custom/plugins/zsh-vi-mode
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+source $HOME/.zshenv
+source $HOME/.zprofile
+source $HOME/.zshrc
 
 # Create keys
 ssh-keygen -f ~/.ssh/github -t ed25519 -C "christophermaisch@gmail.com"
