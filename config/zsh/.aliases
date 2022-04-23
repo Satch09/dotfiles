@@ -1,6 +1,6 @@
 # General
 alias o=open
-# alias nuke='rm -rf'
+alias nuke='rm -rf'
 alias rdpstart='sudo service xrdp start'
 alias rdpstop='sudo service xrdp stop'
 alias update='sudo apt update'
@@ -53,12 +53,13 @@ alias cra='create-react-app'
 alias gb='gatsby'
 
 # General Development
+alias ip="curl ipinfo.io/ip"
+alias localip='python -c "import socket; print(socket.gethostbyname(socket.gethostname()));"'
 
 
 # Common openings
 # Using vsc - vscode plugin for vscode
 alias c='code-insiders'
-
 
 # Firebase
 alias fb='firebase'

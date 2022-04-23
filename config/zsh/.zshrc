@@ -6,7 +6,7 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 ZSH_DISABLE_COMPFIX=false
 ZSH_THEME="my_agnoster"
 
-plugins=(z wd cp copyfile copydir zsh-vi-mode web-search alias-finder git man osx zsh-autosuggestions nvm)
+plugins=(aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
 
 # for index ({1..9}) alias "$index"="cd +${index}"; unset index 
 # Can cd to directory stacks with numbers

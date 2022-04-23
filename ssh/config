@@ -1,14 +1,18 @@
 # Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 
 
-Host pi
-    User satch
-    HostName 192.168.3.1
-    IdentityFile ~/.ssh/pi
-    Port 22
-    PermitLocalCommand yes
-    # # Unfortunately ssh does not support line breaks in config files
-         LocalCommand ssh -o PermitLocalCommand=no %n "which git >/dev/null && ([[ -d ~/dotfiles ]] && (echo "Updating your dotfiles on %h ..." && cd ~/dotfiles && git pull -q && ./install >/dev/null) || (echo "Installing dotfiles on %h ..." && git clone -q https://github.com/Satch09/dotfiles && ./dotfiles/install >/dev/null))"
+Host hole
+    User pi
+    HostName 192.168.3.4
+
+# Host pi
+#    User satch
+#    HostName 192.168.3.1
+#    IdentityFile ~/.ssh/pi
+#    Port 22
+#    PermitLocalCommand yes
+#    # # Unfortunately ssh does not support line breaks in config files
+#         LocalCommand ssh -o PermitLocalCommand=no %n "which git >/dev/null && ([[ -d ~/dotfiles ]] && (echo "Updating your dotfiles on %h ..." && cd ~/dotfiles && git pull -q && ./install >/dev/null) || (echo "Installing dotfiles on %h ..." && git clone -q https://github.com/Satch09/dotfiles && ./dotfiles/install >/dev/null))"
 
 Host remote-pi
     User satch
