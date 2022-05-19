@@ -72,5 +72,6 @@ COMPLETION_WAITING_DOTS="true"
 
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/.aliases
+source $HOME/.config/zsh/my_plugins/zsh-autocomplete
 
-echo "Session"
+echo ".zshrc"

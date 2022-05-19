@@ -1,4 +1,4 @@
-#!/bin/zsh
+#! usr/local/bin/zsh
 
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME=~/.cache
@@ -16,7 +16,7 @@ fi
 
 export SHELL_SESSIONS_DISABLE=1
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-echo "Environment"
+echo ".zshenv"
 export PATH="/Users/satch/.ebcli-virtual-env/executables:$PATH"
-export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+# export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
 
