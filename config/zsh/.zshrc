@@ -1,5 +1,4 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
 setopt AUTO_CD              # Go to folder path without using cd.
 setopt AUTO_PUSHD               # Push thee current directorey visited on the stack
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
@@ -10,7 +9,7 @@ ZSH_THEME="my_agnoster"
 
 plugins=(copypath brew aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
 
-# for index ({1..9}) alias "$index"="cd +${index}"; unset index 
+# for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # Can cd to directory stacks with numbers
 autoload -Uz compinit; compinit
 
@@ -66,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-   
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -78,5 +77,3 @@ source $HOME/.config/zsh/my_plugins/zsh-autocomplete
 
 echo ".zshrc"
 
-# Fig post block. Keep at the bottom of this file.
-. "$HOME/.fig/shell/zshrc.post.zsh"
