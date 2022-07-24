@@ -60,7 +60,7 @@ alias localip='python -c "import socket; print(socket.gethostbyname(socket.getho
 
 # Common openings
 # Using vsc - vscode plugin for vscode
-alias c='code-insiders'
+alias c='code'
 
 # Firebase
 alias fb='firebase'

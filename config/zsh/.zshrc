@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+. "$HOME/.fig/shell/zshrc.pre.zsh"
 setopt AUTO_CD              # Go to folder path without using cd.
 setopt AUTO_PUSHD               # Push thee current directorey visited on the stack
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
@@ -6,7 +8,7 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 ZSH_DISABLE_COMPFIX=false
 ZSH_THEME="my_agnoster"
 
-plugins=(aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
+plugins=(copypath brew aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
 
 # for index ({1..9}) alias "$index"="cd +${index}"; unset index 
 # Can cd to directory stacks with numbers
@@ -75,3 +77,6 @@ source $ZDOTDIR/.aliases
 source $HOME/.config/zsh/my_plugins/zsh-autocomplete
 
 echo ".zshrc"
+
+# Fig post block. Keep at the bottom of this file.
+. "$HOME/.fig/shell/zshrc.post.zsh"

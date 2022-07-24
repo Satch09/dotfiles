@@ -1,0 +1,52 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	"myFor": {
+		"prefix": "fr",
+		"body": [
+			"for(let $1 = $2; $3 $4 $5; $6) {",
+			"",
+			"$0",
+			"",
+			"}",
+		],
+		"description": "Simple for loop!"
+	},
+	"myIIFE": {
+		"prefix": "iife",
+		"body": [
+			"(function ($1) {",
+			"$2",
+			"})($0)",
+		],
+		"description": "my IIFE"
+	},
+	"then": {
+		"prefix": "thn",
+		"body": [
+			".then((${1:data}) => {",
+			"$0$1",
+			"})$2",
+		],
+		"description": ".catch chain"
+	},
+	"catch": {
+		"prefix": "ctc",
+		"body": [
+			".catch((${1:data}) => {",
+			"$0$1",
+			"})$2",
+		],
+		"description": ".then chain"
+	},
+	"thenc": {
+		"prefix": "thnc",
+		"body": [
+			".then((${1:data}) => {$1}).catch((${2:err}) => {console.error($2)})$0",
+		],
+		"description": "Adds .then.catch block"
+	},
+}
