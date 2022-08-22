@@ -1,5 +1,5 @@
 version 6.0
-source $HOME/.config/.nvim_plugins/plugs.vim
+source $HOME/.config/nvim/autoload/plugs.vim
 let s:cpo_save=&cpo
 set cpo&vim
 set display+=lastline

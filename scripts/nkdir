@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+echo Deleting "$@" folders recursively...
+find . -name "$@" -type d -prune -print -exec rm -rf '{}' \;
+echo Done!
+exit 0
+
+

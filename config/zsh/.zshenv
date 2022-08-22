@@ -1,5 +1,8 @@
 #! usr/local/bin/zsh
 
+# Sets global path for common config files
+# I do this to keep HOME folder a little cleaner
+# Requires manual setup = I actually do want this config vs something else put it there
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME=~/.cache
 export XDG_DATA_HOME=~/.local/share
@@ -16,7 +19,5 @@ fi
 
 export SHELL_SESSIONS_DISABLE=1
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-echo ".zshenv"
-export PATH="/Users/satch/.ebcli-virtual-env/executables:$PATH"
 # export SDKROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
 

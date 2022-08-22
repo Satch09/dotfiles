@@ -10,7 +10,7 @@ ZSH_THEME="my_agnoster"
 
 plugins=(copypath brew aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
 
-# for index ({1..9}) alias "$index"="cd +${index}"; unset index 
+# for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # Can cd to directory stacks with numbers
 autoload -Uz compinit; compinit
 
@@ -66,7 +66,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-   
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -75,6 +75,11 @@ COMPLETION_WAITING_DOTS="true"
 source $ZSH/oh-my-zsh.sh
 source $ZDOTDIR/.aliases
 source $HOME/.config/zsh/my_plugins/zsh-autocomplete
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 echo ".zshrc"
 

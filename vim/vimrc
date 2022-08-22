@@ -3,29 +3,29 @@
 "---------------------
 set shortmess=at " disable startup message
 " number lines
-set nu 
+set nu
 " relative line numbering
-set rnu	
+set rnu
 " show where you are
-set ruler 
+set ruler
 " incremental search (as string is being typed)
-set incsearch 
+set incsearch
 " highlight search
-set hls 
+set hls
 " line break
-set lbr	
+set lbr
 set ignorecase
 " tab completion for files/bufferss
-set smartcase 
+set smartcase
 set wildmode=longest,list
 set wildmenu
 "set mouse+=a " enable mouse mode (scrolling, selection, etc)
 " not vi compatible
-set nocompatible 
+set nocompatible
 " yank and paste with the system clipboard
 " set clipboard=unnamed
 " show a navigable menu for tab completion
-set wildmenu	
+set wildmenu
 set noswapfile
 
 set expandtab
@@ -44,15 +44,15 @@ let g:netrw_liststyle=3 " tree view
 " Syntax and indent
 "------------------
 " turn on syntax highlighting
-syntax on 
+syntax on
 " show matching braces when text indicator is over them
-set showmatch 
+set showmatch
 
 
 "---------------------
 " Custom Maps
 "---------------------
-imap ii <Esc>l				
+imap ii <Esc>l
 map vv <Esc>
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>
@@ -89,12 +89,13 @@ Plug 'tpope/vim-repeat'
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'ctrlpvim/ctrlp.vim'
-" Plug 'vim-airline/vim-airline'
-" Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'tpope/vim-commentary'
 
 call plug#end()
 
+require 'lspconfig'
 " Airline Plugin"
 let g:airline#extensions#tabline#enabled = 1
 

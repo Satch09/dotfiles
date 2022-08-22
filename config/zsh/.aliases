@@ -25,8 +25,8 @@ alias afg='alias-finder git'
 alias gcm="git commit -m'"
 alias d='dirs -v'
 alias vim=nvim
-alias install='brew install'
-alias uninstall='brew uninstall'
+# alias install='brew install'
+# alias uninstall='brew uninstall'
 
 # Info
 alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
@@ -57,14 +57,13 @@ alias gb='gatsby'
 alias ip="curl ipinfo.io/ip"
 alias localip='python -c "import socket; print(socket.gethostbyname(socket.gethostname()));"'
 
-
-# Common openings
-# Using vsc - vscode plugin for vscode
+# Utility
 alias c='code'
+alias twig='tree -d 2'
+
 
 # Firebase
 alias fb='firebase'
-alias fb-df='firebase deploy --only functions'
 
 # Python
 alias python='python3'
