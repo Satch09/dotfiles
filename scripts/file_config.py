@@ -1,32 +1,13 @@
-from pathlib import Path
-import os
-from itertools import chain
-
-# uses the current folder which it is being called in
-# TODO add parameters
-FOLDER_PATH = Path(os.getcwd())
-# FOLDER_PATH = Path('D:/Downloads')
-
 SUBFOLDER_NAME_TO_EXTENSIONS = {
     'video': ('mp4', 'mov', 'avi', 'mkv', 'wmv', 'mpg', 'mpeg', 'm4v', 'h264', 'gif'),
     'audio': ('mp3', 'wav', 'ogg', 'flac', 'aif', 'mid', 'midi', 'wma'),
-    'image': ('jpg', 'png', 'bmp', 'jpeg', 'svg', 'tif', 'tiff'),
+    'image': ('jpg', 'png', 'bmp', 'jpeg', 'svg', 'tif', 'tiff', 'webp', 'JPG', 'JPEG'),
     'archive': ('zip', 'rar', '7z', 'z', 'gz', 'pkg', 'deb'),
-    'text': ('pdf', 'txt', 'doc', 'docx', 'rtf', 'odt'),
-    'spreadsheet': ('xlsx', 'xls', 'xlsm', 'csv'),
+    'installable': ('dmg'),
+    'code': ('json', 'csv', 'py', 'js', 'ts', 'css', 'svelte', 'yaml', 'yml'),
+    'text': ('pdf', 'txt', 'doc', 'docx', 'rtf', 'odt', 'pages'),
+    'spreadsheet': ('xlsx', 'xls', 'xlsm', 'csv', 'numbers'),
     'presentation': ('pptx', 'ppt'),
     'book': ('fb2', 'epub', 'mobi'),
     # 'subfolder-name': ('extension', 'another-extension')
 }
-
-LOGS_FOLDER = Path('logs')
-
-SUBFOLDER_NAMES = tuple(SUBFOLDER_NAME_TO_EXTENSIONS.keys())
-EXTENSIONS = tuple(chain.from_iterable(
-    (SUBFOLDER_NAME_TO_EXTENSIONS.values())))
-
-
-def get_subfolder_name_by_extension(extension: str) -> str:
-    for subfolder_name, tuple_of_extensions in SUBFOLDER_NAME_TO_EXTENSIONS.items():
-        if extension in tuple_of_extensions:
-            return subfolder_name

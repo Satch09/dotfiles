@@ -1,16 +1,28 @@
 #! /usr/local/bin/zsh
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+      
   local DISTRIB=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
   if [[ ${DISTRIB} = "Ubuntu"* ]]; then
     if uname -a | grep -q '^Linux.*Microsoft'; then
-      # ubuntu via WSL Windows Subsystem for Linux
+    MY_OS_IS="linux-wsl"
     else
-      # native ubuntu
+    MY_OS_IS="linux"
     fi
   elif [[ ${DISTRIB} = "Debian"* ]]; then
-    # debian
+    MY_OS_IS="debian"
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-  echo "This is mac"
+    MY_OS_IS="macos"
 fi
+  if [ "$?" != 0 ]; then
+        echo "---------------------"
+        echo "Could not determine your OS"
+        echo "---------------------"
+        else
+        export YOUR_OS_IS=MY_OS_IS
+        echo "---------------------"
+        echo "Your OS has been set"
+        echo "---------------------"
+  fi
+exit 0
