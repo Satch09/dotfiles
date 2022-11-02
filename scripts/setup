@@ -26,6 +26,10 @@ zsh() {
         ./install.sh
         cd ..
         rm -rf fonts
+        
+        echo Installing oh-my-zsh...
+        sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+
 
         echo Your new shell is ready!
 
