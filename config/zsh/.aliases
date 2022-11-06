@@ -1,0 +1,75 @@
+# General
+alias o=open
+alias nuke='rm -rf'
+alias rdpstart='sudo service xrdp start'
+alias rdpstop='sudo service xrdp stop'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
+alias exti=exit
+alias eixt=exit
+alias nr='npm run'
+alias ni='npm install'
+alias nu='npm uninstall'
+alias nrst='npm run start'
+alias nrsv='npm run serve'
+alias nig='npm i -g'
+alias zconf='nvim $ZDOTDIR/.zshrc'
+alias vconf='nvim ~/.vimrc'
+alias zaliases='nvim $ZDOTDIR/.aliases'
+alias zexports='nvim $ZDOTDIR/.exports'
+alias tconf='nvim ~/.tmux.conf'
+alias zsrc='source $ZDOTDIR/.zshrc'
+alias zenv='source $ZDOTDIR/.zshenv'
+alias af='alias-finder'
+alias afg='alias-finder git'
+alias gcm="git commit -m'"
+alias d='dirs -v'
+alias vim=nvim
+# alias install='brew install'
+# alias uninstall='brew uninstall'
+
+# Info
+alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias biggest='du -s ./* | sort -nr | awk '\''{print $2}'\'' | xargs du -sh'
+alias dux='du -x --max-depth=1 | sort -n'
+alias path='echo -e ${PATH//:/\\n}'
+alias linecount="grep -c '^'"
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
+alias dud='du -d 1 -h'
+alias duf='du -sh *'
+# Tmux
+alias tm=tmux
+
+
+# Defaults
+alias mv='mv -i'
+# alias ls='lsd'
+alias lst='ls -t'
+
+# Folders
+
+# React
+alias cra='create-react-app'
+alias gb='gatsby'
+
+# General Development
+alias ip="curl ipinfo.io/ip"
+alias localip='python -c "import socket; print(socket.gethostbyname(socket.gethostname()));"'
+
+# Utility
+alias c='code'
+alias twig='tree -d 2'
+
+
+# Firebase
+alias fb='firebase'
+
+# Python
+alias python='python3'
+alias py='python'
+alias pip='pip3'
+
+# Docker
+alias dk='docker'
+alias dc='docker-compose'

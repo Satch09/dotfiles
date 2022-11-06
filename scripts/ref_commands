@@ -1,0 +1,6 @@
+# Listing Directories
+ls -d */
+ls -l | grep '^d'
+find . -maxdepth 1 -type d
+echo */
+tree -d -L 1

@@ -4,19 +4,21 @@
       relink: true
       force: true
 
-- clean: ['~']
+        #- clean: ['~']
 
 - create:
   - ~/scripts.d
   - ~/.ssh
+  - ~/.config
 
 - link:
-    ~/.aliases: zsh/aliases
-    ~/.zshenv: zsh/zshenv
-    ~/.zshrc: zsh/zshrc
-    ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: zsh/my_agnoster.zsh-theme
+    ~/.zshenv: config/zsh/.zshenv
+    ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: config/zsh/my_agnoster.zsh-theme
     ~/.gitconfig: git/gitconfig
     ~/.vimrc: vim/vimrc
+    ~/.config/nvim: config/nvim/
+    ~/.config/zsh: config/zsh/
+    ~/.config/karabiner: config/karabiner/
     ~/.npmrc: npmrc
     ~/scripts.d: scripts
     ~/.ssh/config: ssh/config
@@ -24,4 +26,4 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  # - [cp vim/vimrc /mnt/c/Users/chris/.vimrc]
+  - [source $HOME/.zshenv]

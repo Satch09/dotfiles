@@ -1,0 +1,10 @@
+#! /usr/local/bin/zsh
+mkdir -p "$(dirname "$1")" && touch "$1";
+if [ "$?" != 0 ]; then
+        echo $1 successfully created!
+        else
+        echo "---------------------"
+        echo "... Something went wrong"
+        echo "---------------------"
+  fi
+exit 0

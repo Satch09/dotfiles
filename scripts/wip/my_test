@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+pihole updatePihole
+echo "Pi Hole Updated..."
+exit 0

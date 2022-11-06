@@ -1,0 +1,9 @@
+export PATH="$HOME/scripts.d:$HOME/bin:/usr/local/bin:$HOME/.local/bin:$PATH"
+PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
+PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+
+export PATH="/Users/satch/.ebcli-virtual-env/executables:$PATH"
+
+# Keep at the bottom so that we know PATH is finally being exported
+
+export PATH
