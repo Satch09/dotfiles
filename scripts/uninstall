@@ -1,37 +1,38 @@
-#! /usr/local/bin/zsh
+#! /usr/bin/zsh
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "---------------------"
-        echo "Installation for Linux / WSL"
+        echo "Uninstallation for Linux / WSL"
         echo "---------------------"
   local DISTRIB=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
   if [[ ${DISTRIB} = "Ubuntu"* ]]; then
     if uname -a | grep -q '^Linux.*Microsoft'; then
-        echo "Installation for WSL..."
-        sudo apt install "$@"
+        echo "Unistallation for WSL..."
+        sudo apt uninstall "$@"
     else
-        echo "Installation for Linux..."
-        sudo apt install "$@"
+        echo "Unistallation for Linux..."
+        sudo apt uninstall "$@"
     fi
   elif [[ ${DISTRIB} = "Debian"* ]]; then
         echo "---------------------"
-        echo "Installation for Debian..."
+        echo "Unistallation for Debian..."
         echo "---------------------"
-        sudo apt install "$@"
+        sudo apt uninstall "$@"
   fi
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "---------------------"
-        echo "Installation for MacOS"
+        echo "Unistallation for MacOS"
         echo "---------------------"
-        brew install "$@"
+        brew uninstall "$@"
 fi
   if [ "$?" != 0 ]; then
         echo "---------------------"
-        echo "... Nothing was installed"
+        echo "... Nothing was removed"
+        echo "---------------------"
         echo "---------------------"
         else
-        echo "Installation successfully completed!"
+        echo "Unistallation successfully completed!"
         echo "---------------------"
-        echo "---------------------"
+
   fi
 exit 0

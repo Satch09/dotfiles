@@ -1,0 +1,49 @@
+#! /usr/bin/zsh
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        echo "---------------------"
+        echo "Installation for WSL"
+        echo "---------------------"
+        sudo apt install "$@"
+        exit 0
+  local DISTRIB=$(awk -F= '/^NAME/{print $2}' /etc/os-release)
+  if [[ ${DISTRIB} = "Ubuntu"* ]]; then
+    if uname -a | grep -q '^Linux.*Microsoft'; then
+        echo "Installation for WSL..."
+        sudo apt install "$@"
+        echo "Installation successfully completed!"
+        exit 0
+    else
+        echo "---------------------"
+        echo "Installation for Linux"
+        echo "---------------------"
+        sudo apt install "$@"
+        echo "Installation successfully completed!"
+        exit 0
+    fi
+  elif [[ ${DISTRIB} = "Debian"* ]]; then
+        echo "---------------------"
+        echo "Installation for Debian"
+        echo "---------------------"
+        sudo apt install "$@"
+        echo "Installation successfully completed!"
+        exit 0
+  fi
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+        echo "---------------------"
+        echo "Installation for MacOS"
+        echo "---------------------"
+        brew install "$@"
+        echo "Installation successfully completed!"
+        exit 0
+fi
+  if [ "$?" != 0 ]; then
+        echo "---------------------"
+        echo "...There was nothing to install"
+        echo "---------------------"
+        else
+        echo "Nothing was installed"
+        echo "---------------------"
+        exit 1
+  fi
+exit 0
