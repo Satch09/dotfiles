@@ -2,12 +2,13 @@
     link:
       create: true
       relink: true
-      force: true
+      #force: true
 
         #- clean: ['~']
 
 - create:
   - ~/functions.d
+  - ~/icloud
   - ~/.ssh
   - ~/.config
 
@@ -23,7 +24,7 @@
     ~/functions.d: functions.d
     ~/.ssh/config: ssh/config
     ~/.tmux.conf: tmux.conf
-
+    ~/icloud: ~/Library/Mobile Documents/com~apple~CloudDocs
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [source $HOME/.zshenv]
