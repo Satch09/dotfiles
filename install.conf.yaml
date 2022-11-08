@@ -7,22 +7,22 @@
         #- clean: ['~']
 
 - create:
-  - ~/scripts.d
+  - ~/functions.d
   - ~/.ssh
   - ~/.config
 
 - link:
     ~/.zshenv: config/zsh/.zshenv
     ~/.oh-my-zsh/themes/my_agnoster.zsh-theme: config/zsh/my_agnoster.zsh-theme
-    ~/.gitconfig: git/gitconfig
-    ~/.vimrc: vim/vimrc
+    ~/.gitconfig: gitconfig
+    #~/.vimrc: vimrc
     ~/.config/nvim: config/nvim/
     ~/.config/zsh: config/zsh/
     ~/.config/karabiner: config/karabiner/
     ~/.npmrc: npmrc
-    ~/scripts.d: scripts
+    ~/functions.d: functions.d
     ~/.ssh/config: ssh/config
-    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmux.conf: tmux.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

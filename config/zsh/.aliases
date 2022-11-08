@@ -22,11 +22,15 @@ alias zsrc='source $ZDOTDIR/.zshrc'
 alias zenv='source $ZDOTDIR/.zshenv'
 alias af='alias-finder'
 alias afg='alias-finder git'
+alias clone='git clone'
 alias gcm="git commit -m'"
 alias d='dirs -v'
 alias vim=nvim
-# alias install='brew install'
-# alias uninstall='brew uninstall'
+#alias install='brew install'
+#alias uninstall='brew uninstall'
+alias jpy='jupyter'
+alias lst='ls -t'
+#alias lsd='ls -l'
 
 # Info
 alias iplocal="ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'"
@@ -34,8 +38,8 @@ alias biggest='du -s ./* | sort -nr | awk '\''{print $2}'\'' | xargs du -sh'
 alias dux='du -x --max-depth=1 | sort -n'
 alias path='echo -e ${PATH//:/\\n}'
 alias linecount="grep -c '^'"
-alias fd='find . -type d -name'
-alias ff='find . -type f -name'
+alias fdir='find . -type d -name'
+alias ffile='find . -type f -name'
 alias dud='du -d 1 -h'
 alias duf='du -sh *'
 # Tmux
