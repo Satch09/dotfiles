@@ -692,14 +692,11 @@ for app in "Activity Monitor" \
 	"Contacts" \
 	"Dock" \
 	"Finder" \
-	"Google Chrome" \
 	"Mail" \
 	"Messages" \
 	"Photos" \
 	"Safari" \
 	"SystemUIServer" \
-	"Terminal" \
-	"Transmission" \
 	"iCal"; do
 	killall "${app}" &> /dev/null
 done
@@ -709,12 +706,14 @@ echo "Done. Note that some of these changes require a logout/restart to take eff
 if test ! "$(command -v brew)"
 then
   echo "Installing Homebrew."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  sh -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
 #echo "Installing Brewfile..."
 brew bundle --file=./Brewfile
 
+echo "Installing SpaceVim."
+curl -sLf https://spacevim.org/install.sh | bash
 #installcask qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch quicklook-csv betterzipql webp-quicklook suspicious-package && qlmanage -r
 
 #sudo easy_install pip

@@ -1,5 +1,4 @@
 # Fig pre block. Keep at the top of this file.
-. "$HOME/.fig/shell/zshrc.pre.zsh"
 setopt AUTO_CD              # Go to folder path without using cd.
 setopt AUTO_PUSHD               # Push thee current directorey visited on the stack
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack

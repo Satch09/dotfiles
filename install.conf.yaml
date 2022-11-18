@@ -2,9 +2,9 @@
     link:
       create: true
       relink: true
-      #force: true
+      force: true
 
-        #- clean: ['~']
+- clean: ['~']
 
 - create:
   - ~/functions.d
@@ -23,7 +23,8 @@
     ~/.npmrc: npmrc
     ~/functions.d: functions.d
     ~/.ssh/config: ssh/config
-    ~/.tmux.conf: tmux.conf
+    ~/.condarc: condarc
+    # ~/.tmux.conf: tmux.conf
     ~/icloud: ~/Library/Mobile Documents/com~apple~CloudDocs
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -37,4 +37,3 @@ Host github.com
 Host gist.github.com
     User git
     IdentityFile ~/.ssh/github
-
