@@ -1,4 +1,7 @@
 # Fig pre block. Keep at the top of this file.
+
+
+eval $(/opt/homebrew/bin/brew shellenv) # Apple M1 thing
 setopt AUTO_CD              # Go to folder path without using cd.
 setopt AUTO_PUSHD               # Push thee current directorey visited on the stack
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
@@ -88,16 +91,24 @@ echo ".zshrc"
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/usr/local/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+__conda_setup="$('/opt/homebrew/Caskroom/miniconda/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
     eval "$__conda_setup"
 else
-    if [ -f "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
-        . "/usr/local/Caskroom/miniconda/base/etc/profile.d/conda.sh"
+    if [ -f "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/Caskroom/miniconda/base/etc/profile.d/conda.sh"
     else
-        export PATH="/usr/local/Caskroom/miniconda/base/bin:$PATH"
+        export PATH="/opt/homebrew/Caskroom/miniconda/base/bin:$PATH"
     fi
 fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+
+
+
+# pnpm
+export PNPM_HOME="/Users/air/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end

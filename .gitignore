@@ -3,3 +3,4 @@
 config/karabiner/automatic_backups/*
 config/zsh/.zcomp*
 config/zsh/.zsh_his*
+config/.DS_Store
