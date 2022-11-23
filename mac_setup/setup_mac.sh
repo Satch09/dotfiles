@@ -8,9 +8,6 @@ echo "Running Mac setup..."
 
 # ~/.macos — https://mths.be/macos
 
-# Close any open System Preferences panes, to prevent them from overriding
-# settings we’re about to change
-osascript -e 'tell application "System Preferences" to quit'
 
 # Ask for the administrator password upfront
 sudo -v
@@ -18,9 +15,66 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-###############################################################################
-# General UI/UX                                                               #
-###############################################################################
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
+
+# Check for Homebrew
+echo "Checking for Homebrew."
+if test ! "$(command -v brew)"
+then
+  echo "Installing Homebrew."
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+echo "Installing Brewfile..."
+echo "Make sure that nvm is in your Brewfile..."
+brew bundle --file=./Brewfile
+brew doctor
+brew cleanup && brew cask cleanup
+
+echo "Installing SpaceVim..."
+curl -sLf https://spacevim.org/install.sh | bash
+
+#sudo easy_install pip
+# sudo pip install -r requirements.pip
+echo "Installing nvm --lts..."
+nvm install --lts
+echo "Using lts..."
+nvm use --lts
+echo "Alias default => lts..."
+nvm alias default --lts
+
+echo "Removing .oh-my-zsh so that we can start a new one..."
+# Must do this before installing omz
+rm -rf ~/.oh-my-zsh
+
+echo "Installing Oh My ZSH Framework..."
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+echo "Cloning zsh-vi-mode..."
+git clone https://github.com/jeffreytse/zsh-vi-mode \
+  $ZSH_CUSTOM/plugins/zsh-vi-mode
+
+echo "Cloning zsh-autosuggestions..."
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+echo "Cloning zsh-syntax-highlighting..."
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+#echo "You may have to delete /Library/Preferences/com.apple.Bluetooth.plist or *Bluetooth related filenames and reboot"
+
+echo "Almost done... sourcing .zfiles"
+source $HOME/.zshenv
+source $HOME/.zprofile
+source $HOME/.zshrc
+
+# M1 Mac thing, else scripts (which don't point to /opt will break)
+# Standard practice to point to this zsh location rather; more universal
+
+echo "Simlinking /opt/homebrew/bin/zsh /usr/local/bin"
+sudo ln -s /bin/zsh /usr/local/bin
+sudo ln -s /opt/homebrew/bin/zsh /usr/local/bin
 
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
@@ -38,10 +92,6 @@ defaults write com.apple.LaunchServices LSQuarantine -bool false
 
 # Disable automatic termination of inactive apps
 defaults write NSGlobalDomain NSDisableAutomaticTermination -bool true
-
-###############################################################################
-# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-###############################################################################
 
 # Trackpad: enable tap to click for this user and for the login screen
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
@@ -61,10 +111,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 1
 
 # Set the timezone; see `sudo systemsetup -listtimezones` for other values
 sudo systemsetup -settimezone "Africa/Johannesburg" > /dev/null
-
-###############################################################################
-# Energy saving                                                               #
-###############################################################################
 
 # Enable lid wakeup
 sudo pmset -a lidwake 1
@@ -97,10 +143,6 @@ sudo touch /private/var/vm/sleepimage
 # …and make sure it can’t be rewritten
 sudo chflags uchg /private/var/vm/sleepimage
 
-###############################################################################
-# Screen                                                                      #
-###############################################################################
-
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
@@ -120,10 +162,6 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 1
 
 # Enable HiDPI display modes (requires restart)
 sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
-
-###############################################################################
-# Finder                                                                      #
-###############################################################################
 
 defaults write NSGlobalDomain "NSToolbarTitleViewRolloverDelay" -float "0" 
 
@@ -229,10 +267,6 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 	General -bool true \
 	OpenWith -bool true \
 	Privileges -bool true
-
-###############################################################################
-# Dock, Dashboard, and hot corners                                            #
-###############################################################################
 
 # Show indicator lights for open applications in the Dock
 defaults write com.apple.dock show-process-indicators -bool true
@@ -402,24 +436,6 @@ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
 # Disable automatic spell checking
 defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnabled"
 
-###############################################################################
-# Spotlight                                                                   #
-###############################################################################
-
-# Hide Spotlight tray-icon (and subsequent helper)
-#sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-# Disable Spotlight indexing for any volume that gets mounted and has not yet
-# been indexed before.
-# Use `sudo mdutil -i off "/Volumes/foo"` to stop indexing any volume.
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
-# Make sure indexing is enabled for the main volume
-sudo mdutil -i on / > /dev/null
-# Rebuild the index from scratch
-sudo mdutil -E / > /dev/null
-
-###############################################################################
-# Terminal & iTerm 2                                                          #
-###############################################################################
 
 # Only use UTF-8 in Terminal.app
 defaults write com.apple.terminal StringEncodings -array 4
@@ -478,7 +494,7 @@ defaults write org.x.X11 wm_ffm -bool true
 
 # Enable Secure Keyboard Entry in Terminal.app
 # See: https://security.stackexchange.com/a/47786/8918
-defaults write com.apple.terminal SecureKeyboardEntry -bool true
+# defaults write com.apple.terminal SecureKeyboardEntry -bool true
 
 # Disable the annoying line marks
 defaults write com.apple.Terminal ShowLineMarks -int 0
@@ -486,19 +502,11 @@ defaults write com.apple.Terminal ShowLineMarks -int 0
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
-###############################################################################
-# Time Machine                                                                #
-###############################################################################
-
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable local Time Machine backups
 hash tmutil &> /dev/null && sudo tmutil disablelocal
-
-###############################################################################
-# Activity Monitor                                                            #
-###############################################################################
 
 # Show the main window when launching Activity Monitor
 defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
@@ -512,33 +520,6 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 # Sort Activity Monitor results by CPU usage
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
-
-###############################################################################
-# Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
-###############################################################################
-
-# Enable the debug menu in Address Book
-defaults write com.apple.addressbook ABShowDebugMenu -bool true
-
-# Enable Dashboard dev mode (allows keeping widgets on the desktop)
-defaults write com.apple.dashboard devmode -bool true
-
-# Enable the debug menu in Disk Utility
-defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
-defaults write com.apple.DiskUtility advanced-image-options -bool true
-
-# Auto-play videos when opened with QuickTime Player
-defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
-
-###############################################################################
-# Mac App Store                                                               #
-###############################################################################
-
-# Enable the WebKit Developer Tools in the Mac App Store
-#defaults write com.apple.appstore WebKitDeveloperExtras -bool true
-
-# Enable Debug Menu in the Mac App Store
-#defaults write com.apple.appstore ShowDebugMenu -bool true
 
 # Enable the automatic update check
 defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
@@ -561,69 +542,8 @@ defaults write com.apple.commerce AutoUpdate -bool true
 # Allow the App Store to reboot machine on macOS updates
 defaults write com.apple.commerce AutoUpdateRestartRequired -bool true
 
-###############################################################################
-# Photos                                                                      #
-###############################################################################
-
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-###############################################################################
-# Kill affected applications                                                  #
-###############################################################################
-
-for app in "Activity Monitor" \
-	"Address Book" \
-	"Calendar" \
-	"cfprefsd" \
-	"Contacts" \
-	"Dock" \
-	"Finder" \
-	"Google Chrome" \
-	"Mail" \
-	"Messages" \
-	"Photos" \
-	"Safari" \
-	"SystemUIServer" \
-	"Transmission" \
-	"iCal"; do
-	killall "${app}" &> /dev/null
-done
-echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-# Check for Homebrew
-if test ! "$(command -v brew)"
-then
-  echo "Installing Homebrew."
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-fi
-
-echo "Installing Brewfile..."
-brew bundle --file=./Brewfile
-
-#sudo easy_install pip
-# sudo pip install -r requirements.pip
-echo "Installing nvm --lts..."
-nvm install --lts
-echo "Using lts..."
-nvm use --lts
-echo "Alias default => lts..."
-nvm alias default --lts
-
-echo Installing SpaceVim...
-curl -sLf https://spacevim.org/install.sh | bash
-
-brew cleanup && brew cask cleanup
-
-echo "You may have to delete /Library/Preferences/com.apple.Bluetooth.plist or *Bluetooth related filenames and reboot"
-
-source $HOME/.zshenv
-source $HOME/.zprofile
-source $HOME/.zshrc
-
-# M1 Mac thing
-sudo ln -s /bin/zsh /usr/local/bin
-sudo ln -s /opt/homebrew/bin/zsh /usr/local/bin
 
 echo "Done!"
 

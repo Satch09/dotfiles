@@ -1,7 +1,6 @@
 # Fig pre block. Keep at the top of this file.
 
 
-eval $(/opt/homebrew/bin/brew shellenv) # Apple M1 thing
 setopt AUTO_CD              # Go to folder path without using cd.
 setopt AUTO_PUSHD               # Push thee current directorey visited on the stack
 setopt PUSHD_IGNORE_DUPS        # Do not store duplicates in the stack
@@ -112,3 +111,4 @@ unset __conda_setup
 export PNPM_HOME="/Users/air/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
