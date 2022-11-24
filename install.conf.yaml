@@ -24,7 +24,7 @@
     ~/functions.d: functions.d
     ~/.ssh/config: ssh/config
     ~/.condarc: condarc
-    # ~/.tmux.conf: tmux.conf
+    ~/.gitignore: gitignore
     ~/icloud: ~/Library/Mobile Documents/com~apple~CloudDocs
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

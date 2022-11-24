@@ -29,8 +29,8 @@ fi
         echo "---------------------"
         echo "... Nothing was removed"
         echo "---------------------"
-        echo "---------------------"
         else
+        echo "---------------------"
         echo "Unistallation successfully completed!"
         echo "---------------------"
 

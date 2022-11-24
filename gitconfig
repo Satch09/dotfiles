@@ -3,7 +3,7 @@
 	email = 18578121+Satch09@users.noreply.github.com
 [core]
 	editor = 'vim'
-	excludesfile = /home/satch/.gitignore_global
+	excludesfile = /Users/mini/.gitignore
 	ignorecase = false
 [diff]
 	mnemonicPrefix = true
