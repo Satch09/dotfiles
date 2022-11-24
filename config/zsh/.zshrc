@@ -9,7 +9,7 @@ setopt PUSHD_SILENT             # Do not print the directory stack after pushd o
 ZSH_DISABLE_COMPFIX=false
 ZSH_THEME="my_agnoster"
 
-plugins=(copypath brew aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm)
+plugins=(copypath brew aws z wd cp copyfile copypath zsh-vi-mode web-search alias-finder git man macos zsh-autosuggestions zsh-syntax-highlighting nvm sudo)
 
 # for index ({1..9}) alias "$index"="cd +${index}"; unset index
 # Can cd to directory stacks with numbers
@@ -111,4 +111,4 @@ unset __conda_setup
 export PNPM_HOME="/Users/air/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
-source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+#source $(brew --prefix)/opt/zsh-vi-mode/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
