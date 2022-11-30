@@ -44,6 +44,7 @@ alias dud='du -d 1 -h'
 alias duf='du -sh *'
 # Tmux
 alias tm=tmux
+alias cat='bat'
 
 
 # Defaults
@@ -80,3 +81,7 @@ alias dc='docker-compose'
 
 alias xcode="open -a Xcode"
 alias cpdir="pwd | pbcopy"
+
+# Print out PATH, one per line
+alias path='echo -e ${PATH//:/\\n}'
+alias update='sudo softwareupdate -i -a; brew update; brew upgrade; brew cleanup;'
